@@ -18,6 +18,8 @@ module i2c_master_top(
 	output reg[ 7:0] rxr_o,
 	output reg[ 7:0] cr_o,
 	output reg[ 7:0] sr_o,
+	input cs_i, //FIXME I don't like the name - too often as chip select, here fo cyc & stb from wishbone.
+	output reg ack_o,
 	input  scl_pad_i,
 	output scl_pad_o, scl_padoen_o,
 	input  sda_pad_i,
@@ -61,14 +63,15 @@ module i2c_master_top(
 
 	// generate internal reset
 	wire rst_i = arst_i ^ ARST_LVL;
-/*
+
 	// generate wishbone signals
-	wire wb_wacc = wb_we_i & wb_ack_o;
+	//wire wb_wacc = wb_we_i & wb_ack_o;
+	wire wb_wacc = ack_o;
 
 	// generate acknowledge output signal
 	always @(posedge wb_clk_i)
-	  wb_ack_o <= #1 wb_cyc_i & wb_stb_i & ~wb_ack_o; // because timing is always honored
-*/
+	  ack_o <= #1 cs_i & ~ack_o; // because timing is always honored
+
 /*	// assign DAT_O
 	always @(posedge wb_clk_i)
 	begin
@@ -145,8 +148,8 @@ always @(posedge wb_clk_i)
 	    cr <= #1 8'h0;
 	  else if (wb_wacc)
 	    begin
-	        if (core_en & (wb_adr_i == 3'b100) )
-	          cr <= #1 wb_dat_i;
+	        if (core_en)
+	          cr <= #1 cr_i;
 	    end
 	  else
 	    begin

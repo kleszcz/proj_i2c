@@ -1,0 +1,7 @@
+verilog work "i2c_master_bit_ctrl.v"
+verilog work "i2c_master_byte_ctrl.v"
+verilog work "i2c_slave_model.v"
+verilog work "i2c_master_top.v"
+verilog work "delay.v"
+verilog work "tb.v"
+verilog work "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

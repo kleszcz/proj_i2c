@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "/home/lab_cpu/kleszcz_ma_dwadziescia_rak/proj_i2c/i2c_master_top.xst" -ofn "/home/lab_cpu/kleszcz_ma_dwadziescia_rak/proj_i2c/i2c_master_top.syr" 
