@@ -25,45 +25,47 @@ status:               100000 Testbench started
 
 
 status:               195000 done reset
-status:               286000 generate 'start', write cmd 20 (slave address+write)
+status:               256000 generate 'start', write cmd 20 (slave address+write)
 DEBUG i2c_slave; stop condition detected at               601000
 # run all
-DEBUG i2c_slave; start condition detected at              8896000
-DEBUG i2c_slave; command byte received (write) at            102808000
-status:            113475000 tip==0
-status:            113506000 write slave memory address 01
+DEBUG i2c_slave; start condition detected at              8886000
+DEBUG i2c_slave; command byte received (write) at            102788000
+status:            113455000 tip==0
+status:            113476000 write slave memory address 01
 DEBUG i2c_slave; address received. adr=01, ack=1
-status:            214455000 tip==0
-status:            214486000 write data a5
+status:            214435000 tip==0
+status:            214456000 write data a5
 DEBUG i2c_slave; data block write a5 to address 01
-status:            315435000 tip==0
-status:            315466000 write next data 5a, generate 'stop'
+status:            315415000 tip==0
+status:            315436000 write next data 5a, generate 'stop'
 DEBUG i2c_slave; data block write 5a to address 02
-status:            427635000 tip==0
-status:            427666000 generate 'start', write cmd 20 (slave address+write)
-DEBUG i2c_slave; stop condition detected at            428186000
-DEBUG i2c_slave; start condition detected at            436226000
-DEBUG i2c_slave; command byte received (write) at            530188000
-status:            540855000 tip==0
-status:            540886000 write slave memory address 01
+status:            427615000 tip==0
+status:            427636000 generate 'start', write cmd 20 (slave address+write)
+DEBUG i2c_slave; stop condition detected at            428166000
+DEBUG i2c_slave; start condition detected at            436206000
+DEBUG i2c_slave; command byte received (write) at            530168000
+status:            540835000 tip==0
+status:            540856000 write slave memory address 01
 DEBUG i2c_slave; address received. adr=01, ack=1
-status:            641835000 tip==0
-status:            641866000 generate 'repeated start', write cmd 21 (slave address+read)
-DEBUG i2c_slave; start condition detected at            651596000
-WARNING: at 651596 ns: Timing violation in /tb/i2c_slave/  $setup( scl:648416 ns, sda:651596 ns,4700 ns)
+status:            641815000 tip==0
+status:            641836000 generate 'repeated start', write cmd 21 (slave address+read)
+DEBUG i2c_slave; start condition detected at            651576000
+WARNING: at 651576 ns: Timing violation in /tb/i2c_slave/  $setup( scl:648396 ns, sda:651576 ns,4700 ns)
 
 
-DEBUG i2c_slave; command byte received (read) at            745408000
+DEBUG i2c_slave; command byte received (read) at            745388000
 DEBUG i2c_slave; data block read a5 from address 01 (1)
 DEBUG i2c_slave; memcheck [0]=xx, [1]=a5, [2]=5a
-status:            756075000 tip==0
-status:            756106000 read + ack
+status:            756055000 tip==0
+status:            756076000 read + ack
 DEBUG i2c_slave; data block read 5a from address 02 (2)
-status:            857055000 tip==0
-status:            857086000 received a5
-status:            857116000 read + ack
+status:            857035000 tip==0
+status:            857056000 tip==0
+status:            857056000 received a5
+status:            857076000 read + ack
 DEBUG i2c_slave; data block read xx from address 03 (2)
-status:            958035000 tip==0
-status:            958066000 received 5a
-status:            958166000 Testbench done
-Stopped at time : 958166 ns : File "C:/Users/Jan/Documents/GitHub/proj_i2c/tb.v" Line 412
+status:            958015000 tip==0
+status:            958036000 tip==0
+status:            958036000 received 5a
+status:            968036000 Testbench done
+Stopped at time : 968036 ns : File "C:/Users/Jan/Documents/GitHub/proj_i2c/tb.v" Line 377
