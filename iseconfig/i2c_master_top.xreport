@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2014-02-21T13:32:50</DateModified>
+  <DateModified>2014-02-21T15:11:48</DateModified>
   <ModuleName>i2c_master_top</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>C:/Users/Jan/Desktop/proj_i2c/iseconfig/i2c_master_top.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/Jan/Desktop/proj_i2c\</ImplementationReportsDirectory>
+  <SavedFilePath>C:/Users/Jan/Documents/GitHub/proj_i2c/iseconfig/i2c_master_top.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/Users/Jan/Documents/GitHub/proj_i2c\</ImplementationReportsDirectory>
   <DateInitialized>2014-01-20T10:13:46</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

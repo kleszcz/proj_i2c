@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/Jan/Desktop/proj_i2c/delay.v";
+static const char *ng0 = "C:/Users/Jan/Documents/GitHub/proj_i2c/delay.v";
 
 
 

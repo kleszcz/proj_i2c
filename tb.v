@@ -127,12 +127,13 @@ module tb;
 		
 		
 		// program prer
-		@(posedge clk); 
+	/*	@(posedge clk); 
 		#1 cs_i = 1'b1;
 		prer_i = 16'h00fa;
 		@(posedge clk); 
 		while(~ack_o) @(posedge clk); // wait for ack
 		#1 cs_i = 1'b0;
+		*/
 		
 		@(posedge clk) 
 		#1 cs_i = 1'b1;
@@ -154,16 +155,17 @@ module tb;
 		@(posedge clk) 
 		#1 cs_i = 1'b1;
 		txr_i = {SADR,WR};
-		@(posedge clk); 
-		while(~ack_o) @(posedge clk); // wait for ack
-		#1 cs_i = 1'b0;
-		
-		#1 cs_i = 1'b1;
 		cr_i = 8'h90;
 		@(posedge clk); 
 		while(~ack_o) @(posedge clk); // wait for ack
 		#1 cs_i = 1'b0;
 		
+	/*	#1 cs_i = 1'b1;
+		cr_i = 8'h90;
+		@(posedge clk); 
+		while(~ack_o) @(posedge clk); // wait for ack
+		#1 cs_i = 1'b0;
+	*/	
 		$display("status: %t generate 'start', write cmd %0h (slave address+write)", $time, {SADR,WR} );
 	
 		// wait for tip == 0;
@@ -207,22 +209,24 @@ module tb;
 		@(posedge clk) 
 		#1 cs_i = 1'b1;
 		txr_i = 8'ha5;
+		cr_i = 8'h10;
 		@(posedge clk); 
 		while(~ack_o) @(posedge clk); // wait for ack
 		#1 cs_i = 1'b0;
-		
+		/*
 		#1 cs_i = 1'b1;
 		cr_i = 8'h10;
 		@(posedge clk); 
 		while(~ack_o) @(posedge clk); // wait for ack
 		#1 cs_i = 1'b0;
+		*/
 		$display("status: %t write data a5", $time);
 		
-		while (scl) #1;
+/*		while (scl) #1;
 		force scl= 1'b0;
 		#100000;
 		release scl;
-
+*/
 		// wait for tip == 0;
 		@(posedge clk) 
 		#1 cs_i = 1'b1;
@@ -237,15 +241,17 @@ module tb;
 		@(posedge clk) 
 		#1 cs_i = 1'b1;
 		txr_i = 8'h5a;
+		cr_i = 8'h50;
 		@(posedge clk); 
 		while(~ack_o) @(posedge clk); // wait for ack
 		#1 cs_i = 1'b0;
-		
+		/*
 		#1 cs_i = 1'b1;
 		cr_i = 8'h50;
 		@(posedge clk); 
 		while(~ack_o) @(posedge clk); // wait for ack
 		#1 cs_i = 1'b0;
+		*/
 		 $display("status: %t write next data 5a, generate 'stop'", $time);
 		
 
@@ -267,16 +273,17 @@ module tb;
 		@(posedge clk) 
 		#1 cs_i = 1'b1;
 		txr_i = {SADR,WR};
+		cr_i = 8'h90;
 		@(posedge clk); 
 		while(~ack_o) @(posedge clk); // wait for ack
 		#1 cs_i = 1'b0;
-		
+		/*
 		#1 cs_i = 1'b1;
 		cr_i = 8'h90;
 		@(posedge clk); 
 		while(~ack_o) @(posedge clk); // wait for ack
 		#1 cs_i = 1'b0;
-		
+		*/
 		$display("status: %t generate 'start', write cmd %0h (slave address+write)", $time, {SADR,WR} );
 	
 		// wait for tip == 0;
@@ -319,15 +326,17 @@ module tb;
 		@(posedge clk) 
 		#1 cs_i = 1'b1;
 		txr_i = {SADR,RD};
+		cr_i = 8'h90;
 		@(posedge clk); 
 		while(~ack_o) @(posedge clk); // wait for ack
 		#1 cs_i = 1'b0;
-		
+		/*
 		#1 cs_i = 1'b1;
 		cr_i = 8'h90;
 		@(posedge clk); 
 		while(~ack_o) @(posedge clk); // wait for ack
 		#1 cs_i = 1'b0;
+		*/
 		$display("status: %t generate 'repeated start', write cmd %0h (slave address+read)", $time, {SADR,RD} );
 		
 		// wait for tip == 0;
@@ -369,7 +378,35 @@ module tb;
 	      else
 	        $display("status: %t received %x", $time, rxr_o);
 		
+		@(posedge clk) 
+		#1 cs_i = 1'b1;
+		cr_i = 8'h20;
+		@(posedge clk); 
+		while(~ack_o) @(posedge clk); // wait for ack
+		#1 cs_i = 1'b0;
+		$display("status: %t read + ack", $time);
 		
+		// wait for tip == 0;
+		@(posedge clk) 
+		#1 cs_i = 1'b1;
+		@(posedge clk); 
+		while(~ack_o) @(posedge clk); // wait for ack
+		#1 cs_i = 1'b0;
+		while(sr_o[1]) @(posedge clk);
+		$display("status: %t tip==0", $time);
+		
+		
+		//read data
+		// wait for tip == 0;
+		@(posedge clk) 
+		#1 cs_i = 1'b1;
+		@(posedge clk); 
+		while(~ack_o) @(posedge clk); // wait for ack
+		#1 cs_i = 1'b0;
+		if(rxr_o !== 8'h5a)
+	        $display("\nERROR: Expected 5a, received %x at time %t", rxr_o, $time);
+	      else
+	        $display("status: %t received %x", $time, rxr_o);
 		#100
 		$display("status: %t Testbench done", $time);
 		$finish;
