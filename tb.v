@@ -268,13 +268,13 @@ module tb;
 		#1 cs_i = 1'b0;
 		$display("status: %t read + ack", $time);
 		
-		// wait for tip == 0;
+	/*	// wait for tip == 0;
 		#1 cs_i = 1'b1;
 		while(~ack_o) @(posedge clk); // wait for ack
 		#1 cs_i = 1'b0;
 		while(sr_o[1]) @(posedge clk);
 		$display("status: %t tip==0", $time);
-		
+	*/	
 		
 		//read data
 		// wait for tip == 0;
@@ -290,20 +290,12 @@ module tb;
 		
 
 		#1 cs_i = 1'b1;
-		cr_i = 8'h20;
+		cr_i = 8'h60;
 		while(~ack_o) @(posedge clk); // wait for ack
 		#1 cs_i = 1'b0;
-		$display("status: %t read + ack", $time);
+		$display("status: %t read + stop", $time);
 		
-		// wait for tip == 0;
-		#1 cs_i = 1'b1;
-		while(~ack_o) @(posedge clk); // wait for ack
-		#1 cs_i = 1'b0;
-		while(sr_o[1]) @(posedge clk);
-		$display("status: %t tip==0", $time);
-		
-		
-		//read data
+			//read data
 		// wait for tip == 0;
 		#1 cs_i = 1'b1;
 		while(~ack_o) @(posedge clk); // wait for ack
@@ -315,8 +307,24 @@ module tb;
 	      else
 	        $display("status: %t received %x", $time, rxr_o);
 			  
-			  
+			
+		
+/*
 
+		#1 cs_i = 1'b1;
+		cr_i = 8'h40;
+		while(~ack_o) @(posedge clk); // wait for ack
+		#1 cs_i = 1'b0;
+		$display("status: %t stop", $time);
+		
+			//read data
+		// wait for tip == 0;
+		#1 cs_i = 1'b1;
+		while(~ack_o) @(posedge clk); // wait for ack
+		#1 cs_i = 1'b0;
+		while(sr_o[1]) @(posedge clk);
+		$display("status: %t tip==0", $time);
+*/
 		#10000
 		$display("status: %t Testbench done", $time);
 		$finish;

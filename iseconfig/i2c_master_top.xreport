@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2014-02-21T15:11:48</DateModified>
+  <DateModified>2014-02-22T19:42:01</DateModified>
   <ModuleName>i2c_master_top</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <SavedFilePath>C:/Users/Jan/Documents/GitHub/proj_i2c/iseconfig/i2c_master_top.xreport</SavedFilePath>

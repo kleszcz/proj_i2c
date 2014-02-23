@@ -1,0 +1,28 @@
+Command line:
+   tb_i2c_fsm_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  62482
+
+Sun Feb 23 15:08:28 2014
+
+
+ Elaboration Time: 0.046875 sec
+
+ Current Memory Usage: 836.215 Meg
+
+ Total Signals          : 122
+ Total Nets             : 227
+ Total Signal Drivers   : 74
+ Total Blocks           : 9
+ Total Primitive Blocks : 5
+ Total Processes        : 115
+ Total Traceable Variables  : 158
+ Total Scalar Nets and Variables : 1478
+
+ Total Simulation Time: 0.71875 sec
+
+ Current Memory Usage: 364.331 Meg
+
+Sun Feb 23 15:14:03 2014
+

@@ -1,0 +1,28 @@
+Command line:
+   i2c_master_byte_ctrl_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  35045
+
+Fri Feb 21 17:59:44 2014
+
+
+ Elaboration Time: 0.046875 sec
+
+ Current Memory Usage: 840.298 Meg
+
+ Total Signals          : 49
+ Total Nets             : 74
+ Total Signal Drivers   : 21
+ Total Blocks           : 3
+ Total Primitive Blocks : 2
+ Total Processes        : 38
+ Total Traceable Variables  : 75
+ Total Scalar Nets and Variables : 608
+
+ Total Simulation Time: 0.09375 sec
+
+ Current Memory Usage: 840.298 Meg
+
+Fri Feb 21 17:59:47 2014
+

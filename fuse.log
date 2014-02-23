@@ -1,14 +1,15 @@
-Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o C:/Users/Jan/Documents/GitHub/proj_i2c/tb_isim_beh.exe -prj C:/Users/Jan/Documents/GitHub/proj_i2c/tb_beh.prj work.tb work.glbl 
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o C:/Users/Jan/Documents/GitHub/proj_i2c/tb_i2c_fsm_isim_beh.exe -prj C:/Users/Jan/Documents/GitHub/proj_i2c/tb_i2c_fsm_beh.prj work.tb_i2c_fsm work.glbl 
 ISim P.20131013 (signature 0x7708f090)
 Number of CPUs detected in this system: 8
 Turning on mult-threading, number of parallel sub-compilation jobs: 16 
 Determining compilation order of HDL files
 Analyzing Verilog file "C:/Users/Jan/Documents/GitHub/proj_i2c/i2c_master_bit_ctrl.v" into library work
 Analyzing Verilog file "C:/Users/Jan/Documents/GitHub/proj_i2c/i2c_master_byte_ctrl.v" into library work
-Analyzing Verilog file "C:/Users/Jan/Documents/GitHub/proj_i2c/i2c_slave_model.v" into library work
 Analyzing Verilog file "C:/Users/Jan/Documents/GitHub/proj_i2c/i2c_master_top.v" into library work
+Analyzing Verilog file "C:/Users/Jan/Documents/GitHub/proj_i2c/i2c_slave_model.v" into library work
+Analyzing Verilog file "C:/Users/Jan/Documents/GitHub/proj_i2c/i2c_fsm.v" into library work
 Analyzing Verilog file "C:/Users/Jan/Documents/GitHub/proj_i2c/delay.v" into library work
-Analyzing Verilog file "C:/Users/Jan/Documents/GitHub/proj_i2c/tb.v" into library work
+Analyzing Verilog file "C:/Users/Jan/Documents/GitHub/proj_i2c/tb_i2c_fsm.v" into library work
 Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
 Completed static elaboration
@@ -16,11 +17,12 @@ Compiling module delay
 Compiling module i2c_master_bit_ctrl
 Compiling module i2c_master_byte_ctrl
 Compiling module i2c_master_top
+Compiling module i2c_fsm
 Compiling module i2c_slave_model
-Compiling module tb
+Compiling module tb_i2c_fsm
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Compiled 7 Verilog Units
-Built simulation executable C:/Users/Jan/Documents/GitHub/proj_i2c/tb_isim_beh.exe
-Fuse Memory Usage: 28376 KB
-Fuse CPU Usage: 421 ms
+Compiled 8 Verilog Units
+Built simulation executable C:/Users/Jan/Documents/GitHub/proj_i2c/tb_i2c_fsm_isim_beh.exe
+Fuse Memory Usage: 28448 KB
+Fuse CPU Usage: 405 ms
