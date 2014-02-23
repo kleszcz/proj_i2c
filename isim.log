@@ -20,23 +20,10 @@ Time resolution is 1 ps
 # run 1000 ns
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
-DEBUG i2c_slave; stop condition detected at               711000
+DEBUG i2c_slave; stop condition detected at               710000
 # run all
-DEBUG i2c_slave; start condition detected at              8846000
-DEBUG i2c_slave; command byte received (read) at            102728000
-DEBUG i2c_slave; data block read xx from address xx (1)
-DEBUG i2c_slave; memcheck [0]=xx, [1]=xx, [2]=xx
-DEBUG i2c_slave; data block read xx from address xx (2)
-DEBUG i2c_slave; data block read xx from address xx (2)
-Stopped at time : 326695 ns : File "C:/Users/Jan/Documents/GitHub/proj_i2c/tb_i2c_fsm.v" Line 91
-# restart
-# restart
-# run all
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-DEBUG i2c_slave; stop condition detected at               711000
-DEBUG i2c_slave; start condition detected at              8846000
-DEBUG i2c_slave; command byte received (read) at            102728000
+DEBUG i2c_slave; start condition detected at              8845000
+DEBUG i2c_slave; command byte received (read) at            102727000
 DEBUG i2c_slave; data block read xx from address xx (1)
 DEBUG i2c_slave; memcheck [0]=xx, [1]=xx, [2]=xx
 DEBUG i2c_slave; data block read xx from address xx (2)

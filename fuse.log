@@ -22,7 +22,8 @@ Compiling module i2c_slave_model
 Compiling module tb_i2c_fsm
 Compiling module glbl
 Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
 Compiled 8 Verilog Units
 Built simulation executable C:/Users/Jan/Documents/GitHub/proj_i2c/tb_i2c_fsm_isim_beh.exe
-Fuse Memory Usage: 28448 KB
-Fuse CPU Usage: 405 ms
+Fuse Memory Usage: 28396 KB
+Fuse CPU Usage: 390 ms

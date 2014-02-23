@@ -70,7 +70,7 @@ module i2c_master_top(
 
 	// generate acknowledge output signal
 	always @(posedge wb_clk_i)
-	  ack_o <= #1 cs_i & ~ack_o; // because timing is always honored
+	  ack_o <= cs_i & ~ack_o; // because timing is always honored
 
 /*	// assign DAT_O
 	always @(posedge wb_clk_i)
@@ -100,15 +100,15 @@ always @(posedge wb_clk_i)
 always @(posedge wb_clk_i)
 	  if (!rst_i)
 	    begin
-	        prer <= #1 16'hffff;
-	        ctr  <= #1  8'h0;
-	        txr  <= #1  8'h0;
+	        prer <= 16'hffff;
+	        ctr  <= 8'h0;
+	        txr  <= 8'h0;
 	    end
 	  else if (wb_rst_i)
 	    begin
-	        prer <= #1 16'hffff;
-	        ctr  <= #1  8'h0;
-	        txr  <= #1  8'h0;
+	        prer <= 16'hffff;
+	        ctr  <= 8'h0;
+	        txr  <= 8'h0;
 	    end
 	  else
 	begin
@@ -143,21 +143,21 @@ always @(posedge wb_clk_i)
 	// generate command register (special case)
 	always @(posedge wb_clk_i or negedge rst_i)
 	  if (!rst_i)
-	    cr <= #1 8'h0;
+	    cr <= 8'h0;
 	  else if (wb_rst_i)
-	    cr <= #1 8'h0;
+	    cr <= 8'h0;
 	  else if (wb_wacc)
 	    begin
 	        if (core_en)
-	          cr <= #1 cr_i;
+	          cr <= cr_i;
 	    end
 	  else
 	    begin
 	        if (done | i2c_al)
-	          cr[7:4] <= #1 4'h0;           // clear command bits when done
+	          cr[7:4] <= 4'h0;           // clear command bits when done
 	                                        // or when aribitration lost
-	        cr[2:1] <= #1 2'b0;             // reserved bits
-	        cr[0]   <= #1 1'b0;             // clear IRQ_ACK bit
+	        cr[2:1] <= 2'b0;             // reserved bits
+	        cr[0]   <= 1'b0;             // clear IRQ_ACK bit
 	    end
 
 
@@ -203,24 +203,24 @@ always @(posedge wb_clk_i)
 	always @(posedge wb_clk_i or negedge rst_i)
 	  if (!rst_i)
 	    begin
-	        al       <= #1 1'b0;
-	        rxack    <= #1 1'b0;
-	        tip      <= #1 1'b0;
-	        irq_flag <= #1 1'b0;
+	        al       <= 1'b0;
+	        rxack    <= 1'b0;
+	        tip      <= 1'b0;
+	        irq_flag <= 1'b0;
 	    end
 	  else if (wb_rst_i)
 	    begin
-	        al       <= #1 1'b0;
-	        rxack    <= #1 1'b0;
-	        tip      <= #1 1'b0;
-	        irq_flag <= #1 1'b0;
+	        al       <= 1'b0;
+	        rxack    <= 1'b0;
+	        tip      <= 1'b0;
+	        irq_flag <= 1'b0;
 	    end
 	  else
 	    begin
-	        al       <= #1 i2c_al | (al & ~sta);
-	        rxack    <= #1 irxack;
-	        tip      <= #1 (rd | wr);
-	        irq_flag <= #1 (done | i2c_al | irq_flag) & ~iack; // interrupt request flag is always generated
+	        al       <= i2c_al | (al & ~sta);
+	        rxack    <= irxack;
+	        tip      <= (rd | wr);
+	        irq_flag <= (done | i2c_al | irq_flag) & ~iack; // interrupt request flag is always generated
 	    end
 /*
 	// generate interrupt request signals

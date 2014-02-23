@@ -39,17 +39,17 @@ module i2c_fsm(
 	wire [15:0] prer_i = 16'h00c8;
 	wire [ 7:0] ctr_i  = 8'h80; 
 	reg [ 7:0] txr_i  ;
-	reg [ 7:0] rxr_i  ;
+	//reg [ 7:0] rxr_i  ;
 	reg [ 7:0] cr_i   ;
-	reg [ 7:0] sr_i   ;
+	//reg [ 7:0] sr_i   ;
 	reg cs_i;
 
 	// Outputs
-	wire[15:0] prer_o;
-	wire[ 7:0] ctr_o;
-	wire[ 7:0] txr_o;
+//	wire[15:0] prer_o;
+//	wire[ 7:0] ctr_o;
+//	wire[ 7:0] txr_o;
 	wire[ 7:0] rxr_o;
-	wire[ 7:0] cr_o;
+//	wire[ 7:0] cr_o;
 	wire[ 7:0] sr_o;
 	
 	wire ack_o;
@@ -64,15 +64,15 @@ module i2c_fsm(
 		.prer_i(prer_i),
 		.ctr_i(ctr_i)  ,
 		.txr_i(txr_i)  ,
-		.rxr_i(rxr_i)  ,
+		.rxr_i(/*rxr_i*/{8{GND}})  ,
 		.cr_i(cr_i)   ,
-		.sr_i(sr_i)   ,
+		.sr_i(/*sr_i*/{8{GND}})   ,
 		
-		.prer_o(prer_o),
-		.ctr_o(ctr_o),
-		.txr_o(txr_o),
+		.prer_o(/*prer_o*/),
+		.ctr_o(/*ctr_o*/),
+		.txr_o(/*txr_o*/),
 		.rxr_o(rxr_o),
-		.cr_o(cr_o),
+		.cr_o(/*cr_o*/),
 		.sr_o(sr_o),
 	
 		.cs_i(cs_i),

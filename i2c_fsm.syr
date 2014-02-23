@@ -200,12 +200,6 @@ Module <i2c_fsm> is correct for synthesis.
  
 Analyzing module <i2c_master_top> in library <work>.
 	ARST_LVL = 1'b0
-WARNING:Xst:916 - "i2c_master_top.v" line 73: Delay is ignored for synthesis.
-WARNING:Xst:916 - "i2c_master_top.v" line 103: Delay is ignored for synthesis.
-WARNING:Xst:916 - "i2c_master_top.v" line 104: Delay is ignored for synthesis.
-WARNING:Xst:916 - "i2c_master_top.v" line 105: Delay is ignored for synthesis.
-WARNING:Xst:916 - "i2c_master_top.v" line 109: Delay is ignored for synthesis.
-WARNING:Xst:915 - Message (916) is reported only 5 times for each module.
 Module <i2c_master_top> is correct for synthesis.
  
 Analyzing module <i2c_master_byte_ctrl> in library <work>.
@@ -215,12 +209,6 @@ Analyzing module <i2c_master_byte_ctrl> in library <work>.
 	ST_START = 5'b00001
 	ST_STOP = 5'b10000
 	ST_WRITE = 5'b00100
-WARNING:Xst:916 - "i2c_master_byte_ctrl.v" line 107: Delay is ignored for synthesis.
-WARNING:Xst:916 - "i2c_master_byte_ctrl.v" line 109: Delay is ignored for synthesis.
-WARNING:Xst:916 - "i2c_master_byte_ctrl.v" line 111: Delay is ignored for synthesis.
-WARNING:Xst:916 - "i2c_master_byte_ctrl.v" line 113: Delay is ignored for synthesis.
-WARNING:Xst:916 - "i2c_master_byte_ctrl.v" line 118: Delay is ignored for synthesis.
-WARNING:Xst:915 - Message (916) is reported only 5 times for each module.
 "i2c_master_byte_ctrl.v" line 162: Found FullParallel Case directive in module <i2c_master_byte_ctrl>.
 Module <i2c_master_byte_ctrl> is correct for synthesis.
  
@@ -243,12 +231,6 @@ Analyzing module <i2c_master_bit_ctrl> in library <work>.
 	wr_b = 18'b000100000000000000
 	wr_c = 18'b001000000000000000
 	wr_d = 18'b010000000000000000
-WARNING:Xst:916 - "i2c_master_bit_ctrl.v" line 96: Delay is ignored for synthesis.
-WARNING:Xst:916 - "i2c_master_bit_ctrl.v" line 113: Delay is ignored for synthesis.
-WARNING:Xst:916 - "i2c_master_bit_ctrl.v" line 114: Delay is ignored for synthesis.
-WARNING:Xst:916 - "i2c_master_bit_ctrl.v" line 118: Delay is ignored for synthesis.
-WARNING:Xst:916 - "i2c_master_bit_ctrl.v" line 119: Delay is ignored for synthesis.
-WARNING:Xst:915 - Message (916) is reported only 5 times for each module.
 "i2c_master_bit_ctrl.v" line 312: Found FullParallel Case directive in module <i2c_master_bit_ctrl>.
 "i2c_master_bit_ctrl.v" line 308: Found FullParallel Case directive in module <i2c_master_bit_ctrl>.
 Module <i2c_master_bit_ctrl> is correct for synthesis.
@@ -366,14 +348,9 @@ Unit <i2c_master_top> synthesized.
 
 Synthesizing Unit <i2c_fsm>.
     Related source file is "i2c_fsm.v".
-WARNING:Xst:646 - Signal <txr_o> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <sr_o<7:2>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <sr_o<0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:653 - Signal <sr_i> is used but never assigned. This sourceless signal will be automatically connected to value 00000000.
-WARNING:Xst:653 - Signal <rxr_i> is used but never assigned. This sourceless signal will be automatically connected to value 00000000.
-WARNING:Xst:646 - Signal <prer_o> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <ctr_o> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <cr_o> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <GND> is used but never assigned. This sourceless signal will be automatically connected to value 0.
 WARNING:Xst:737 - Found 8-bit latch for signal <txr_i>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <cs_i>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 INFO:Xst:2117 - HDL ADVISOR - Mux Selector <state> of Case statement line 150 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
@@ -908,13 +885,13 @@ Offset:              5.744ns (Levels of Logic = 1)
 
 
 Total REAL time to Xst completion: 5.00 secs
-Total CPU time to Xst completion: 5.29 secs
+Total CPU time to Xst completion: 5.05 secs
  
 --> 
 
-Total memory usage is 241456 kilobytes
+Total memory usage is 241264 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  142 (   0 filtered)
+Number of warnings :  119 (   0 filtered)
 Number of infos    :   18 (   0 filtered)
 
