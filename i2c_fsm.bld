@@ -1,8 +1,0 @@
-Release 14.7 ngdbuild P.20131013 (nt64)
-Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
-
-Command Line: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
--intstyle ise -dd _ngo -nt timestamp -i -p xc3s700an-fgg484-4 i2c_fsm.ngc
-i2c_fsm.ngd
-
-Reading NGO file "C:/Users/Jan/Documents/GitHub/proj_i2c/i2c_fsm.ngc" ...

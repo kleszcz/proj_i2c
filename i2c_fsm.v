@@ -36,11 +36,13 @@ module i2c_fsm(
 
 
 // Inputs
-	wire [15:0] prer_i = 16'h00c8;
+	wire [15:0] prer_i = 16'h0064;
 	wire [ 7:0] ctr_i  = 8'h80; 
 	reg [ 7:0] txr_i  ;
+	reg [ 7:0] txr_r  ;
 	//reg [ 7:0] rxr_i  ;
 	reg [ 7:0] cr_i   ;
+	reg [ 7:0] cr_r   ;
 	//reg [ 7:0] sr_i   ;
 	reg cs_i;
 
@@ -89,7 +91,7 @@ module i2c_fsm(
 	
 	
 
-reg[3:0] state, nx_state, tip_state;
+reg[3:0] state, nx_state, tip_state, tip_state_r;
 
 parameter 	IDLE  = 4'b0000,
 				INIT  = 4'b0001,
@@ -125,34 +127,45 @@ begin
 	state <= nx_state;
 end
 
-always @ *
+reg txr, cr, tip;
 
+always @ *
 if(!arst)
 begin
 	nx_state = IDLE;
-	tip_state = IDLE;
-	txr_i = 8'h00;
-	cr_i = 8'h00;
+	tip_state_r = IDLE;
+	txr_r = 8'h00;
+	cr_r = 8'h00;
+	cs_i = 1'b0;
+	txr = 1'b0;
+	cr = 1'b0;
+	tip = 1'b0;
 end
 else if(rst)
 begin	
 	nx_state = IDLE;
-	tip_state = IDLE;
-	txr_i = 8'h00;
-	cr_i = 8'h00;
+	tip_state_r = IDLE;
+	txr_r = 8'h00;
+	cr_r = 8'h00;
+	cs_i = 1'b0;
+	txr = 1'b0;
+	cr = 1'b0;
+	tip = 1'b0;
 end
 else
 begin
 	nx_state = state;
-	tip_state = tip_state;
-	txr_i = txr_i;
-	cr_i = cr_i;
+	tip_state_r = IDLE;
+	txr_r = 8'h00;
+	cr_r = 8'h00;
+	txr = 1'b0;
+	cr = 1'b0;
+	tip = 1'b0;
 	case(state)
 		IDLE:
 		begin
 			cs_i = 1'b0;
 			nx_state = IDLE;
-			tip_state = IDLE;
 			if(start)
 			begin				
 				nx_state = START;
@@ -162,7 +175,6 @@ begin
 		begin
 			cs_i = 1'b1;
 			nx_state = INACK;
-			tip_state = IDLE;
 		end	
 		INACK:
 		begin
@@ -181,7 +193,6 @@ begin
 		begin
 			cs_i = 1'b1;
 			nx_state = ENACK;
-			tip_state = IDLE;
 		end	
 		ENACK:
 		begin		
@@ -199,10 +210,13 @@ begin
 		START:
 		begin
 			cs_i = 1'b1;
-			txr_i = {SADR,RD};
-			cr_i = 8'h90;
+			txr_r = {SADR,RD};
+			cr_r = 8'h90;
+			txr = 1'b1;
+			cr = 1'b1;
+			tip = 1'b1;
 			nx_state = STACK;
-			tip_state = READ1;
+			tip_state_r = READ1;
 		end
 		STACK:
 		begin
@@ -220,9 +234,11 @@ begin
 		READ1:
 		begin
 			cs_i = 1'b1;
-			cr_i = 8'h20;
+			cr_r = 8'h20;
+			cr = 1'b1;
+			tip = 1'b1;
 			nx_state = R1ACK;
-			tip_state = R1END;
+			tip_state_r = R1END;
 		end
 		R1ACK:
 		begin
@@ -239,14 +255,17 @@ begin
 		end
 		R1END:
 		begin
+			cs_i = 1'b0;
 			nx_state = READ2;
 		end
 		READ2:
 		begin
 			cs_i = 1'b1;
-			cr_i = 8'h60;
+			cr_r = 8'h60;
+			cr = 1'b1;
+			tip = 1'b1;
 			nx_state = R2ACK;
-			tip_state = R2END;
+			tip_state_r = R2END;
 		end
 		R2ACK:
 		begin
@@ -263,10 +282,12 @@ begin
 		end	
 		R2END:
 		begin
+			cs_i = 1'b0;
 			nx_state = IDLE;
 		end
 		TIP:
 		begin
+			cs_i = 1'b0;
 			if(sr_o[1]) 
 				nx_state = TIP;
 			else
@@ -274,7 +295,7 @@ begin
 		end
 		TIPACK:
 		begin
-		if(~ack_o)
+			if(~ack_o)
 			begin
 				cs_i = 1'b1;
 				nx_state = TIPACK;	
@@ -321,4 +342,32 @@ begin
 		end
 	end
 end
+
+
+always @ (posedge clk or negedge arst)
+begin
+	if(!arst)
+	begin
+		txr_i <= 8'h00;
+		cr_i <= 8'h00;
+		tip_state <= 4'h0;
+	end
+	else if(rst)
+	begin
+		txr_i <= 8'h00;
+		cr_i <= 8'h00;
+		tip_state <= 4'h0;
+	end
+	else
+	begin
+		if(txr)
+			txr_i <= txr_r;
+		if(cr)
+			cr_i <= cr_r;
+		if(tip)
+			tip_state <= tip_state_r;
+	end
+end
+
+
 endmodule

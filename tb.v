@@ -129,7 +129,7 @@ module tb;
 
 		// set prescaler
 		#1 cs_i = 1'b1;
-		prer_i = 16'h00c8;
+		prer_i = 16'h0064;
 		while(~ack_o) @(posedge clk); // wait for ack
 		#1 cs_i = 1'b0;
 		
@@ -332,6 +332,17 @@ module tb;
 	end
 	
 	always 
-		#5 clk = !clk;
+		#10 clk = !clk;
       
+endmodule
+
+module delay (in, out);
+  input  in;
+  output out;
+
+  assign out = in;
+
+  specify
+    (in => out) = (600,600);
+  endspecify
 endmodule

@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2014-02-23T13:19:35</DateModified>
+  <DateModified>2014-02-23T22:02:43</DateModified>
   <ModuleName>i2c_fsm</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <SavedFilePath>C:/Users/Jan/Documents/GitHub/proj_i2c/iseconfig/i2c_fsm.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/Jan/Documents/GitHub/proj_i2c</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>C:/Users/Jan/Documents/GitHub/proj_i2c\</ImplementationReportsDirectory>
   <DateInitialized>2014-02-23T13:19:35</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

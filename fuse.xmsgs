@@ -5,5 +5,8 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
+<msg type="warning" file="HDLCompiler" num="687" delta="unknown" >"C:/Users/Jan/Documents/GitHub/proj_i2c/tb.v" Line 339: Illegal redeclaration of module &lt;<arg fmt="%s" index="1">delay</arg>&gt;.
+</msg>
+
 </messages>
 

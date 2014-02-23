@@ -96,7 +96,17 @@ module tb_i2c_fsm;
 	
 	
 	always 
-		#5 clk = !clk;
+		#10 clk = !clk;
       
 endmodule
 
+module delay (in, out);
+  input  in;
+  output out;
+
+  assign out = in;
+
+  specify
+    (in => out) = (600,600);
+  endspecify
+endmodule
