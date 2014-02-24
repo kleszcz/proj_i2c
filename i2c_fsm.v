@@ -111,7 +111,7 @@ parameter 	IDLE  = 4'b0000,
 				
 parameter RD      = 1'b1;
 parameter WR      = 1'b0;
-parameter SADR    = 7'b0010_000;
+parameter SADR    = 7'b1001_111;
 				
 always @ (posedge clk or negedge arst)
 if(!arst)

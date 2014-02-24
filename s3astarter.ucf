@@ -77,9 +77,9 @@ CONFIG POST_CRC = "DISABLE" ;
 # timing constraints for your design.
 ##############################################################################
 
-NET "CLK_50M"       LOC = "E12"  | IOSTANDARD = LVCMOS33 | PERIOD = 20.000 ;
-OFFSET = IN  10.000 VALID 20.000 BEFORE "CLK_50M" ;
-OFFSET = OUT 20.000 AFTER "CLK_50M" ;
+NET "clk"       LOC = "E12"  | IOSTANDARD = LVCMOS33 | PERIOD = 20.000 ;
+OFFSET = IN  10.000 VALID 20.000 BEFORE "clk" ;
+OFFSET = OUT 20.000 AFTER "clk" ;
 
 #NET "CLK_AUX"       LOC = "V12"  | IOSTANDARD = LVCMOS33 | PERIOD = 20.000 ;
 #OFFSET = IN  10.000 VALID 20.000 BEFORE "CLK_AUX" ;
@@ -198,8 +198,8 @@ NET "LED<7>"        LOC = "W21"  | IOSTANDARD = LVCMOS33 | DRIVE = 8 | SLEW = SL
 
 #NET "J18_IO<1>"     LOC = "AA21" | IOSTANDARD = LVCMOS33 | DRIVE = 8 | SLEW = SLOW ;
 #NET "J18_IO<2>"     LOC = "AB21" | IOSTANDARD = LVCMOS33 | DRIVE = 8 | SLEW = SLOW ;
-#NET "J18_IO<3>"     LOC = "AA19" | IOSTANDARD = LVCMOS33 | DRIVE = 8 | SLEW = SLOW ;
-#NET "J18_IO<4>"     LOC = "AB19" | IOSTANDARD = LVCMOS33 | DRIVE = 8 | SLEW = SLOW ;
+NET "sda"     LOC = "AA19" | IOSTANDARD = LVCMOS33 | DRIVE = 8 | SLEW = SLOW | PULLUP ;
+NET "scl"     LOC = "AB19" | IOSTANDARD = LVCMOS33 | DRIVE = 8 | SLEW = SLOW | PULLUP;
 #
 #NET "J19_IO<1>"     LOC = "Y18"  | IOSTANDARD = LVCMOS33 | DRIVE = 8 | SLEW = SLOW ;
 #NET "J19_IO<2>"     LOC = "W18"  | IOSTANDARD = LVCMOS33 | DRIVE = 8 | SLEW = SLOW ;
@@ -262,9 +262,9 @@ NET "LED<7>"        LOC = "W21"  | IOSTANDARD = LVCMOS33 | DRIVE = 8 | SLEW = SL
 ##############################################################################
 
 #NET "BTN_EAST"      LOC = "T16"  | IOSTANDARD = LVCMOS33 | PULLDOWN ;
-NET "BTN_NORTH"     LOC = "T14"  | IOSTANDARD = LVCMOS33 | PULLDOWN ;
-NET "BTN_SOUTH"     LOC = "T15"  | IOSTANDARD = LVCMOS33 | PULLDOWN ;
-#NET "BTN_WEST"      LOC = "U15"  | IOSTANDARD = LVCMOS33 | PULLDOWN ;
+NET "hi"     LOC = "T14"  | IOSTANDARD = LVCMOS33 | PULLDOWN ;
+NET "rst"     LOC = "T15"  | IOSTANDARD = LVCMOS33 | PULLDOWN ;
+NET "lo"      LOC = "U15"  | IOSTANDARD = LVCMOS33 | PULLDOWN ;
 
 ##############################################################################
 # Rotary Knob (ROT)
