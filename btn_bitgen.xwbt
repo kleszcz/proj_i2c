@@ -1,8 +1,0 @@
-INTSTYLE=ise
-INFILE=C:\Users\Jan\Documents\GitHub\proj_i2c\btn.ncd
-OUTFILE=C:\Users\Jan\Documents\GitHub\proj_i2c\btn.bit
-FAMILY=Spartan3A and Spartan3AN
-PART=xc3s700an-4fgg484
-WORKINGDIR=C:\Users\Jan\Documents\GitHub\proj_i2c
-LICENSE=ISE
-USER_INFO=176281944_174171439_210552577_064

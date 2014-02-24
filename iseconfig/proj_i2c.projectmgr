@@ -9,13 +9,15 @@
          <ClosedNodesVersion>2</ClosedNodesVersion>
          <ClosedNode>/Automatic `includes</ClosedNode>
          <ClosedNode>/i2c_fsm C:|Users|Jan|Documents|GitHub|proj_i2c|i2c_fsm.v</ClosedNode>
+         <ClosedNode>/i2c_top C:|Users|Jan|Documents|GitHub|proj_i2c|i2c_top.v</ClosedNode>
+         <ClosedNode>/i2c_top C:|Users|Jan|Documents|GitHub|proj_i2c|i2c_top.v/i2c - i2c_fsm/i2c_master - i2c_master_top/byte_controller - i2c_master_byte_ctrl</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
          <SelectedItem>i2c_top (C:/Users/Jan/Documents/GitHub/proj_i2c/i2c_top.v)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001c2000000020000000000000000000000000200000064ffffffff000000810000000300000002000001c20000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000000b4000000020000000000000000000000000200000064ffffffff000000810000000300000002000000b40000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
       <CurrentItem>i2c_top (C:/Users/Jan/Documents/GitHub/proj_i2c/i2c_top.v)</CurrentItem>
    </ItemView>
@@ -29,7 +31,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000144000000010000000100000000000000000000000064ffffffff000000810000000000000001000001440000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000163000000010000000100000000000000000000000064ffffffff000000810000000000000001000001630000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem/>
    </ItemView>
@@ -67,13 +69,13 @@
          <ClosedNode>User Constraints</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>Manage Configuration Project (iMPACT)</SelectedItem>
+         <SelectedItem></SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >4</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000152000000010000000100000000000000000000000064ffffffff000000810000000000000001000001520000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>Manage Configuration Project (iMPACT)</CurrentItem>
+      <CurrentItem></CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
@@ -81,8 +83,11 @@
          <ClosedNode>/Automatic `includes</ClosedNode>
          <ClosedNode>/i2c_fsm C:|Users|Jan|Documents|GitHub|proj_i2c|i2c_fsm.v</ClosedNode>
          <ClosedNode>/i2c_master_top |home|lab_cpu|kleszcz_ma_dwadziescia_rak|proj_i2c|i2c_master_top.v</ClosedNode>
+         <ClosedNode>/i2c_top C:|Users|Jan|Documents|GitHub|proj_i2c|i2c_top.v</ClosedNode>
+         <ClosedNode>/tb C:|Users|Jan|Documents|GitHub|proj_i2c|tb.v</ClosedNode>
          <ClosedNode>/tb C:|Users|Jan|Documents|GitHub|proj_i2c|tb.v/i2c_master - i2c_master_top/byte_controller - i2c_master_byte_ctrl</ClosedNode>
          <ClosedNode>/tb |home|lab_cpu|kleszcz_ma_dwadziescia_rak|proj_i2c|tb.v/i2c_master - i2c_master_top</ClosedNode>
+         <ClosedNode>/tb_i2c_fsm C:|Users|Jan|Documents|GitHub|proj_i2c|tb_i2c_fsm.v</ClosedNode>
          <ClosedNode>/tb_i2c_fsm C:|Users|Jan|Documents|GitHub|proj_i2c|tb_i2c_fsm.v/uut - i2c_fsm/i2c_master - i2c_master_top/byte_controller - i2c_master_byte_ctrl</ClosedNode>
          <ClosedNode>/tmptb C:|Users|Jan|Documents|GitHub|proj_i2c|tmptb.v</ClosedNode>
       </ClosedNodes>
@@ -91,7 +96,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001c2000000020000000000000000000000000200000064ffffffff000000810000000300000002000001c20000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000000c8000000020000000000000000000000000200000064ffffffff000000810000000300000002000000c80000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
       <CurrentItem>byte_controller - i2c_master_byte_ctrl (C:/Users/Jan/Documents/GitHub/proj_i2c/i2c_master_byte_ctrl.v)</CurrentItem>
    </ItemView>
@@ -214,12 +219,12 @@
          <ClosedNode>User Constraints</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem/>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f8000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f80000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem/>
    </ItemView>
 </Project>
